@@ -1,0 +1,7 @@
+GET http://localhost:3000/api/v1/todo/13
+Content-Type: application/json
+
+{
+    "todo": "going to the beach with Ewa",
+    "isCompleted": true
+}
