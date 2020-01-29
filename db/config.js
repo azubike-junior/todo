@@ -6,15 +6,16 @@ const dotenv = require('dotenv')
 dotenv.config();
 
 const {
+    DATABASE_URL,
     DATA_BASE
 } = process.env
 
 const production = {
-    DATA_BASE
+    connectionString: DATABASE_URL
 }
 
 const development = {
-    DATA_BASE
+    connectionString: DATA_BASE
 }
 
 const conf = () => {
@@ -22,7 +23,7 @@ const conf = () => {
         case 'production':
             return production;
 
-        case 'development':
+        default:
             return development;
     }
 }
