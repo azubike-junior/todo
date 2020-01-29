@@ -6,6 +6,10 @@ app.use(express.json())
 
 app.use('/api/v1', route)
 
+app.get('/', (req, res) => {
+    console.log('responding to root route')
+    res.send('its finally working')
+})
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
